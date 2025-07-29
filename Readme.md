@@ -11,14 +11,9 @@
 
 #### Areas de trabalho do git (ilustração)
 	- 'untracked files': porta de entrada de novos recursos.
-	- 'stage area': arquivos adicionados(add) para compor o commit.
-	- 'local repository': contem commits enviados e recebidos do repositório remoto.   
-
-
-- reset, fetch, merge, stash, revert  
-
-- properties: HEAD, HEAD~1, HEAD~2, --soft, --hard 
- 		  
+	- 'stage area': arquivos adicionados para compor o commit.
+	- 'local repository': contem os commits do repositório.   
+  
 
 #### Comandos:
 
@@ -70,15 +65,9 @@
 ```
 	git log
 
-	git log --stat
-
 	git log --graph
 
-	git log --oneline
-
 	git log --decorate
-
-	git log --author="<autor-name>"
 
 	git reflog
 ``` 
@@ -176,8 +165,6 @@
 
 	git stash show
 
-	git stash drop
-
 	git stash pop
 ``` 
 
@@ -199,51 +186,85 @@
 	git rm --cached <nome-arquivo>
 
 	git reset <nome-pasta-ou-arquivo>
+
+	git reset HEAD
 ``` 
 
 
 *Desfazendo coisas no 'repositório local'*
 
 ```
-	git 
+	git reset --soft <hashcode-do-commit> 
+
+	git reset --mixed <hashcode-do-commit> 
+
+	git reset --hard <hashcode-do-commit> 
+
+	git revert <hashcode-do-commit>
 ``` 
 
 
-*Configurando coisas*
+*Apagar branch ou tag de 'repositório remoto'*
 
 ```
-	git 
+	git push origin :<nome-da-branch-remota> 
+
+	git push origin :<codigo-da-tag-remota> 
+```
+
+
+*Configurar git no projeto ou global*
+
+```
+	git config --list
+
+	git config --list --show-options
+
+	git config --list --show-origin
+
+	cat ~/.gitconfig
+
+	git config --global user.name "<user-name>"
+
+	git config --global user.email "<user-email>"
+
+	git config --global alias.s status
+
+	git config --global http.proxy http://00.00.000.00:0000
+	
+	git config --global https.proxy http://00.00.000.00:0000
+
+	echo $http_proxy
+	
+	unset http_proxy
+
+	unset https
+	
+	git config --global --unset http.proxy
+	
+	reset http_proxy
 ``` 
 
 
+*Trabalhando com tags*
 
-fucking modification to be excluded from unstaged area
+``` 
+	git tag
 
-	git config --global alias.s status 
+	git tag -a 1.0.1 -m "Mensagem da nova tag" 
 	
---- Desfazendo Coisas no Git 
-
-	git checkout "Nome_Arquivo" (retira modifica��o do arquivo ainda na �rea de trabalho(unstaged file))
-	git reset HEAD (retira o arquivo do stage-area, para depois usar o comando git checkout e retirar as altera��es indesej�veis) 
-	git reset "HashCode"(--soft, --mixed, --hard) retira commits
-	git revert "Hash-Code" (hash do commit a ser removido)
+	git push origin main --tags
 	
--- Tag
-	git tag (mostra tags geradas)
-	git tag -a 1.0.1 -m "Mensagem link" (cria tag)
-	git push origin master --tags
+	git tag -d <codigo-da-tag-local>
+``` 
 
------ Apagando Tags e Branchs em Reposit�rios Remotos
+##### Observações Gerais:
 
-	git tag -d cod-tag (ex. 1.0.1 - s� apaga local)
-	git push origin :1.0.0 (apaga tag remota)
-	git push origin :master (apaga branch remoto)
-
-
------ Observações Gerais:
-
-- falando de diff: "sempre use o git diff antes de fazer um commit".
-- git reset: "usa-se a HashCode anterior ao commit que se quer retirar"
-- revert: "ele retira as alterações, informa na log o revert e não apaga o commit de origem do problema da log - o revert serve pra resetar o arquivo sem perder as alterações que foram feitas"
+- use o git diff antes de fazer um commit
+- o git reset usa o 'HashCode' anterior ao commit que se quer retirar
+- o revert serve para retirar o commit sem perder as alterações
+- HEAD, HEAD~1, HEAD~2... aponta partindo do registro mais recente
 
 
+
+#### Autor:  [LinkedIn](https://www.linkedin.com/in/andrp)
