@@ -79,6 +79,8 @@
 	git log --decorate
 
 	git log --author="<autor-name>"
+
+	git reflog
 ``` 
 
 
@@ -180,7 +182,7 @@
 ``` 
 
 
-*Desfazendo coisas em 'untracked files'*
+*Desfazendo alterações em 'untracked files'*
 
 ```
 	git restore <nome-arquivo>
@@ -189,10 +191,14 @@
 ``` 
 
 
-*Desfazendo coisas na 'stage area' (index)*
+*Desfazendo alterações na 'stage area' (index)*
 
 ```
 	git restore --staged <nome-arquivo> 
+
+	git rm --cached <nome-arquivo>
+
+	git reset <nome-pasta-ou-arquivo>
 ``` 
 
 
