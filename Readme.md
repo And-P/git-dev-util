@@ -9,15 +9,15 @@
 </div>
 
 
-### Setores (gráfico acima)
+#### Areas de trabalho do git (ilustração)
 	- 'untracked files': porta de entrada de novos recursos.
 	- 'stage area': arquivos adicionados(add) para compor o commit.
 	- 'local repository': contem commits enviados e recebidos do repositório remoto.   
 
 
-- commands: init, status, add, commit, log, diff, reset, branch, checkout, remote, pull, fetch, merge, remote, stash, shortlog, show, revert  
+- reset, fetch, merge, stash, revert  
 
-- properties: HEAD, HEAD~1, HEAD~2, --soft, --hard, --help, --decorate, --author="Nome", --graph, -sn, --name-only
+- properties: HEAD, HEAD~1, HEAD~2, --soft, --hard 
  		  
 
 #### Comandos:
@@ -25,8 +25,9 @@
 *Iniciar git no projeto*
 
 ```
-	git init"
+	git init
 ``` 
+
 
 *Ajuda com detalhes do comando*
 
@@ -34,11 +35,13 @@
 	git help <comando>
 ``` 
 
+
 *Mostrar conteúdo da 'untracked' e da 'stage' areas*
 
 ```
 	git status
 ``` 
+
 
 *Adicionar atualizações para a 'stage' area*
 
@@ -48,6 +51,7 @@
 	git add <nome-do-arquivo>
 ``` 
 
+
 *Commitar contribuições*
 
 ```
@@ -55,6 +59,7 @@
 
 	git commit -am "<descrição>"
 ``` 
+
 
 *Mostrar 'commits' no repositório local*
 
@@ -68,24 +73,95 @@
 	git log --oneline
 
 	git log --decorate
+
+	git log --author="<autor-name>"
 ``` 
 
-* *
+
+*Mostra modificações nos arquivos*
 
 ```
-	git 
-``` 
-	
-	
-	git clone git@github.com:And-P/github-course.git new_dir
-	git log --decorate (--author="Nome", --graph)
+	git show
 
-	git shortlog (-sn)
+	git show <hash-code>
+
+	git shortlog -sn
+``` 
+
+
+*Mostrar diferenças entre modificações 'untracked', 'staged' ou remota*
+
+```
+	git diff
 	
-	git show "HashCode"
-	git diff (--name-only)
-	git checkout -b novo-branch
+	git diff HEAD
+
+	git diff --name-only
+
+	git diff main origin/main
+``` 
+
+
+*Trabalhar com branchs*
+
+```
 	git branch
+
+	git branch -r 
+
+	git checkout -b <nome-do-novo-branch>
+
+	git checkout <acessar-um-branch-pelo-nome>
+
+	git branch -d <nome-do-branch-para-deletar>
+
+	git branch -D <nome-do-branch-para-deletar-forçado>
+``` 
+
+
+*Endereço remoto geralmente origin*
+
+```
+	git remote -v
+	
+	git remote add <nome-do-apontamento> <url-do-apontamento-remoto>
+
+	git remote rm <remove-apontamento-pelo-nome>
+```
+
+
+*Clonar repositório remoto*
+
+```
+	git clone
+	
+	git clone <git@github.com:Nome-do-Usuario/repositorio.git> <nome-para-novo-diretorio-local>
+``` 
+
+
+*Atualizar repositório local com alterações do repositório remoto*
+
+```
+	git pull
+
+	git pull <remote-origin> <branch-remoto>
+``` 
+
+
+*Enviar commits do repositório local para repositório remoto*
+
+```
+	git push
+
+	git push <remote-origin> <branch-remoto>
+
+	git push <nome-da-tag>
+
+	git push --tags
+``` 
+
+	
+
 	git stash (apply, list, show, drop, clear, create, store)
 	git config --global alias.s status 
 	
@@ -96,27 +172,10 @@
 	git reset "HashCode"(--soft, --mixed, --hard) retira commits
 	git revert "Hash-Code" (hash do commit a ser removido)
 	
--- Branch
-	
-	git branch (lista os branchs disponíveis)
-	git checkout -b novo-branch (cria novo-branch)
-	git checkout novo-branch (entra em novo-branch)
-	git branch -D nome-branch (deleta nome-branch)
-
 -- Tag
 	git tag (mostra tags geradas)
 	git tag -a 1.0.1 -m "Mensagem link" (cria tag)
 	git push origin master --tags
-
---- Repositorio Remoto - GitHub
-	obs: antes, configurar a chave SSH 
-
-	git remote add origin git@github.com:And-P/Projeto.git
-	git remote -v ('lista os repositorios remotos dispon�veis')
-
-	git push -u origin master ('remoto' - 'branch'- o -u crackeia o endere�o, depois � s� digitar git push como atalho)	
-
-	git clone git@github.com:And-P/github-course.git Pasta_Clone
 
 --- GitHub - Fork
 	Fazer um fork(no GitHub) de projetos de outros dom�nios, traz uma c�pia do projeto para meu reposit�rio remoto. 
