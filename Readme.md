@@ -60,6 +60,8 @@
 	git commit -m "<descrição>"
 
 	git commit -am "<descrição>"
+
+	git commit --amend -m "<adicionar nova msg ao commit>"
 ``` 
 
 
@@ -181,14 +183,16 @@
 *Desfazendo coisas em 'untracked files'*
 
 ```
-	git 
+	git restore <nome-arquivo>
+
+	git checkout <nome-arquivo>
 ``` 
 
 
 *Desfazendo coisas na 'stage area' (index)*
 
 ```
-	git 
+	git restore --staged <nome-arquivo> 
 ``` 
 
 
@@ -205,6 +209,9 @@
 	git 
 ``` 
 
+
+
+fucking modification to be excluded from unstaged area
 
 	git config --global alias.s status 
 	
