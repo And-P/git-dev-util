@@ -1,7 +1,7 @@
 <div align="center">
 
   <img src="./.github/assets/git-process.png" alt="Logo" height="500">
-  <h1 align="center" style="color:red"><strong>Git Cheat Sheet</strong></h1>
+  <h1 align="center" style="color:gray"><strong>Git Cheat Sheet</strong></h1>
 
 </div>
 <div align="center">
@@ -22,17 +22,19 @@
 
 #### Comandos:
 
+*Manual das funcionalidades do comando*
+
+```
+	git <comando> --help
+
+	git help <comando>
+``` 
+
+
 *Iniciar git no projeto*
 
 ```
 	git init
-``` 
-
-
-*Ajuda com detalhes do comando*
-
-```
-	git help <comando>
 ``` 
 
 
@@ -160,9 +162,50 @@
 	git push --tags
 ``` 
 
-	
 
-	git stash (apply, list, show, drop, clear, create, store)
+*Armazenar alterações em um diretório de trabalho a parte*
+
+```
+	git stash
+
+	git stash list
+
+	git stash show
+
+	git stash drop
+
+	git stash pop
+``` 
+
+
+*Desfazendo coisas em 'untracked files'*
+
+```
+	git 
+``` 
+
+
+*Desfazendo coisas na 'stage area' (index)*
+
+```
+	git 
+``` 
+
+
+*Desfazendo coisas no 'repositório local'*
+
+```
+	git 
+``` 
+
+
+*Configurando coisas*
+
+```
+	git 
+``` 
+
+
 	git config --global alias.s status 
 	
 --- Desfazendo Coisas no Git 
@@ -177,19 +220,6 @@
 	git tag -a 1.0.1 -m "Mensagem link" (cria tag)
 	git push origin master --tags
 
---- GitHub - Fork
-	Fazer um fork(no GitHub) de projetos de outros dom�nios, traz uma c�pia do projeto para meu reposit�rio remoto. 
-
---- .gitignore 
-   
-	- criar um arquivo .gitignore
-	
-	O .gitignore � um arquivo de texto, onde anotamos o que deve ser ignorado pelo git. 
-	- *.json (*.extensao-do-arquivo): ignora todos os arquivos com tal extens�o
-
-	- nome_do_arquivo : ignora o arquivo especificado
-	- um reposit�rio, no https://github.com/github/gitignore, especifica padr�es para desenvolvimento em varias plataformas(java, etc...) 
-
 ----- Apagando Tags e Branchs em Reposit�rios Remotos
 
 	git tag -d cod-tag (ex. 1.0.1 - s� apaga local)
@@ -197,10 +227,10 @@
 	git push origin :master (apaga branch remoto)
 
 
------ Observa��es Gerais:
+----- Observações Gerais:
 
 - falando de diff: "sempre use o git diff antes de fazer um commit".
 - git reset: "usa-se a HashCode anterior ao commit que se quer retirar"
-- revert: "ele retira as altera��es, informa na log o revert e n�o apaga o commit de origem do problema da log - o revert serve pra resetar o arquivo sem perder as altera��es que foram feitas"
+- revert: "ele retira as alterações, informa na log o revert e não apaga o commit de origem do problema da log - o revert serve pra resetar o arquivo sem perder as alterações que foram feitas"
 
 
