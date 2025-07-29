@@ -9,10 +9,10 @@
 </div>
 
 
-#### Setores
-	- area de trabalho (untracked files) porta de entrada de novas funcionalidades no sistema.
-	- 'stage area', arquivos adicionados(add) para compor o commit.
-	- 'local repository', contem commits enviados e recebidos do repositório remoto.   
+### Setores (gráfico acima)
+	- 'untracked files': porta de entrada de novos recursos.
+	- 'stage area': arquivos adicionados(add) para compor o commit.
+	- 'local repository': contem commits enviados e recebidos do repositório remoto.   
 
 
 - commands: init, status, add, commit, log, diff, reset, branch, checkout, remote, pull, fetch, merge, remote, stash, shortlog, show, revert  
@@ -22,8 +22,61 @@
 
 #### Comandos:
 
-	git commit -am ('para arquivos que já existiram no stage)
+*Iniciar git no projeto*
 
+```
+	git init"
+``` 
+
+*Ajuda com detalhes do comando*
+
+```
+	git help <comando>
+``` 
+
+*Mostrar conteúdo da 'untracked' e da 'stage' areas*
+
+```
+	git status
+``` 
+
+*Adicionar atualizações para a 'stage' area*
+
+```
+	git add .
+
+	git add <nome-do-arquivo>
+``` 
+
+*Commitar contribuições*
+
+```
+	git commit -m "<descrição>"
+
+	git commit -am "<descrição>"
+``` 
+
+*Mostrar 'commits' no repositório local*
+
+```
+	git log
+
+	git log --stat
+
+	git log --graph
+
+	git log --oneline
+
+	git log --decorate
+``` 
+
+* *
+
+```
+	git 
+``` 
+	
+	
 	git clone git@github.com:And-P/github-course.git new_dir
 	git log --decorate (--author="Nome", --graph)
 
