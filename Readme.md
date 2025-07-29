@@ -1,7 +1,7 @@
 <div align="center">
 
   <img src="./.github/assets/git-process.png" alt="Logo" height="500">
-  <h1 align="center" style="color:gray"><strong>Git Cheat Sheet </strong></h1>
+  <h2 align="center" style="color:gray"><strong>Git Cheat Sheet </strong></h1>
 
 </div>
 <div align="center">
